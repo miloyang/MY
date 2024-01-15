@@ -1,37 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import About from "../components/About";
+import Contact from "../components/Contact";
+import { Link } from "react-router-dom";
+import Resume from '../assets/react.svg'
 
 function Header() {
-  const menu = [
+  // set menu
+  const [menu] = useState([
     {
       id: 1,
       name: "HOME",
+      path: "/",
     },
     {
       id: 2,
       name: "PROJECTS",
+      path: '/projects',
     },
     {
       id: 3,
       name: "CONTACT",
+      path: "/contact",
     },
-    {
-      id: 4,
-      name: "RESUME",
-    },
-  ];
+    // {
+    //   id: 4,
+    //   name: "RESUME",
+    //   path: '/resume',
+    // },
+  ]);
+
+  const [currentMenu, setCurrentMenu] = useState(menu[0]);
+
   return (
+    // rendering the logo div
     <div className="flex items-center w-screen justify-between border-b-[1px] bg-white">
       <div className="w-[110px] h-[110px] bg-white">
-        <img src="logo.png" />
+        <img src="logo.png" alt="Logo" />
       </div>
+      {/* rendering the navbar */}
       <div className="hidden md:flex gap-14">
         {menu.map((item) => (
-          <div className="cursor-pointer hover:underline font-medium">
-            <h2>{item.name}</h2>
+          <div
+            key={item.id}
+            className="cursor-pointer hover:underline font-medium"
+            onClick={() => setCurrentMenu(item)}
+          >
+            {/* <h2>{item.name}</h2> */}
+            <Link to={item.path}>
+              {item.name}
+            </Link>
           </div>
         ))}
+        <a href={Resume} download>
+        <h2 className="cursor-pointer hover:underline font-medium">Resume</h2>
+    </a>
       </div>
-      <div className="w-[110px] h-[110px] bg-gray-400 flex justify-center items-center cursor-pointer hover:scale-110 transition-all ease-in-out">
+
+      {/* <a href={Resume} download>
+        <h1>Resume</h1>
+    </a> */}
+
+
+      {/* rendering the mailbox div */}
+      <div className="w-[110px] h-[110px] bg-green-300 flex justify-center items-center cursor-pointer hover:scale-110 transition-all ease-in-out">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -47,6 +79,16 @@ function Header() {
           />
         </svg>
       </div>
+
+      {/* <Router>
+        <div>
+          <Routes>
+            {menu.map((item) => (
+              <Route key={item.id} path={item.path} element={item.component} />
+            ))}
+          </Routes>
+        </div>
+      </Router> */}
     </div>
   );
 }
