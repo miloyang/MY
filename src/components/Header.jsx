@@ -20,18 +20,18 @@ function Header() {
     },
   ];
   return (
-    <div className="flex items-center w-screen justify-between border-b-[1px]">
-      <div className="w-[110px] h-[110px] bg-black">
+    <div className="flex items-center w-screen justify-between border-b-[1px] bg-white">
+      <div className="w-[110px] h-[110px] bg-white">
         <img src="logo.png" />
       </div>
-      <div className="flex gap-14 hover:underline font-medium">
+      <div className="hidden md:flex gap-14">
         {menu.map((item) => (
-          <div className="cursor-pointer">
+          <div className="cursor-pointer hover:underline font-medium">
             <h2>{item.name}</h2>
           </div>
         ))}
       </div>
-      <div className="w-[110px] h-[110px] bg-red-500 flex justify-center items-center">
+      <div className="w-[110px] h-[110px] bg-gray-400 flex justify-center items-center cursor-pointer hover:scale-110 transition-all ease-in-out">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
