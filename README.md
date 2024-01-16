@@ -68,6 +68,10 @@ To run this portfolio locally, follow these steps:
 
 To use the deployed site, please head over to: 
 
+You should see the page as below:
+
+![Milo Yang's Portfolio Screenshot](public/Portfolio.png)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
