@@ -27,7 +27,7 @@ function Resume() {
     <div>
       <div className="flex justify-center flex-col items-center">
         {/* Resume download link */}
-        <a href={Resume} download>
+        <a href="MY-Resume.pdf" download>
           <h2 className="text-[25px] cursor-pointer hover:underline font-medium mt-7">
             Click here to download my Resume
           </h2>
