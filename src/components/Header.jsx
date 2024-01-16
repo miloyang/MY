@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import About from "../components/About";
-import Contact from "../components/Contact";
 import { Link } from "react-router-dom";
-import Resume from '../assets/react.svg'
 
 function Header() {
   // set menu
@@ -16,18 +12,18 @@ function Header() {
     {
       id: 2,
       name: "PROJECTS",
-      path: '/projects',
+      path: "/projects",
     },
     {
       id: 3,
       name: "CONTACT",
       path: "/contact",
     },
-    // {
-    //   id: 4,
-    //   name: "RESUME",
-    //   path: '/resume',
-    // },
+    {
+      id: 4,
+      name: "RESUME",
+      path: "/resume",
+    },
   ]);
 
   const [currentMenu, setCurrentMenu] = useState(menu[0]);
@@ -46,25 +42,14 @@ function Header() {
             className="cursor-pointer hover:underline font-medium"
             onClick={() => setCurrentMenu(item)}
           >
-            {/* <h2>{item.name}</h2> */}
-            <Link to={item.path}>
-              {item.name}
-            </Link>
+            <Link to={item.path}>{item.name}</Link>
           </div>
         ))}
-        <a href={Resume} download>
-        <h2 className="cursor-pointer hover:underline font-medium">Resume</h2>
-    </a>
       </div>
 
-      {/* <a href={Resume} download>
-        <h1>Resume</h1>
-    </a> */}
-
-
-      {/* rendering the mailbox div */}
-      <div className="w-[110px] h-[110px] bg-green-300 flex justify-center items-center cursor-pointer hover:scale-110 transition-all ease-in-out">
-        <svg
+      {/* rendering the logo div */}
+      <div className="w-[110px] h-[110px] flex justify-center items-center">
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -77,18 +62,11 @@ function Header() {
             strokeLinejoin="round"
             d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
           />
-        </svg>
-      </div>
-
-      {/* <Router>
-        <div>
-          <Routes>
-            {menu.map((item) => (
-              <Route key={item.id} path={item.path} element={item.component} />
-            ))}
-          </Routes>
+        </svg> */}
+        <div className="w-[110px] h-[110px] bg-white">
+          <img src="logo.png" alt="Logo" />
         </div>
-      </Router> */}
+      </div>
     </div>
   );
 }

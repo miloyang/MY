@@ -4,18 +4,18 @@ import { validateEmail } from "../../utils/helpers";
 
 function Contact() {
   const [toSend, setToSend] = useState({
-    from_name: "",
+    from_email: "",
     to_name: "miloyang9@gmail.com",
     message: "",
     name: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
-  const { name, from_name, to_name, message } = toSend;
+  const { name, from_email, to_name, message } = toSend;
 
   // Handle change function
   const handleChange = (e) => {
     // validate email
-    if (e.target.name === "email") {
+    if (e.target.name === "from_email") {
       const isValid = validateEmail(e.target.value);
       // isValid conditional statement
       if (!isValid) {
@@ -67,11 +67,13 @@ function Contact() {
           />
         </div>
         <div className="flex flex-col text-[20px] text-black">
-          <label htmlFor="from_name" className="pr-2">From:</label>
+          <label htmlFor="from_email" className="pr-2">
+            From: (your email here)
+          </label>
           <input
             type="text"
-            name="from_name"
-            defaultValue={from_name}
+            name="from_email"
+            defaultValue={from_email}
             onBlur={handleChange}
             className="mb-2 border-[1px] border-black"
           />
@@ -101,13 +103,15 @@ function Contact() {
             </div>
           )}
         </div>
-        <button
-          type="submit"
-          className="btn btn-info mb-5 border-[1px] border-black justify-between items-center"
-          // style={{ width: "75%", margin: "0 auto" }}
-        >
-          Submit
-        </button>
+        {/* The Submit button div */}
+        <div className="flex justify-center">
+          <button
+            type="button"
+            class="text-white bg-gray-800 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 items-center"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </section>
   );

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function ProfilePic() {
   return (
-    <div className=' w-screen h-screen'>
-        <img src="/profile.jpg" className='h-screen object-cover'/>
+    <div className="relative w-screen h-screen overflow-auto">
+      <img src="/profile.jpg" className="h-screen object-cover" />
     </div>
-  )
+  );
 }
 
-export default ProfilePic
+export default ProfilePic;
