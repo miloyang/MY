@@ -66,7 +66,7 @@ To run this portfolio locally, follow these steps:
 
 ## Usage
 
-To use the deployed site, please head over to: https://65a61431f8ae31804770c9ec--resplendent-marshmallow-fb879b.netlify.app/
+To use the deployed site, please head over to: https://resplendent-marshmallow-fb879b.netlify.app
 
 You should see the page as below:
 
