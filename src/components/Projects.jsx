@@ -51,6 +51,16 @@ function ProjectCard({
 function Projects() {
   const projectsData = [
     {
+      imgSrc: "Queue-Smart.png",
+      altText: "Queue Smart Project",
+      title: "Queue Smart",
+      description:
+        "Transform the dining experience for busy restaurants and cafes with our QR-based queue management system, enabling customers to join a digital queue seamlessly and enhance overall efficiency.",
+      tags: ["JavaScript", "React", "Express.js", "Node.js", "GraphQL"],
+      projectLink: "https://queue-smart.onrender.com",
+      githubLink: "https://github.com/miloyang/Queue-Smart",
+    },
+    {
       imgSrc: "DIY-Buddy.png",
       altText: "DIY Buddy Project",
       title: "DIY Buddy",
